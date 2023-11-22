@@ -3,9 +3,7 @@ package com.betrybe.agrix;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-/**
- * Application main class.
- */
+/** Application main class. */
 @SpringBootApplication
 public class AgrixApplication {
 
