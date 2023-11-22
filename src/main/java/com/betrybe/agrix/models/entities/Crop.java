@@ -18,6 +18,7 @@ import java.util.List;
 @Entity
 @Table(name = "crops")
 public class Crop {
+  
   /** Attributes. */
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)

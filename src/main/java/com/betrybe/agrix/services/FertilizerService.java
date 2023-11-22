@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 /** Fertilizer service class. */
 @Service
 public class FertilizerService {
+
   /** Attributes. */
   private final FertilizerRepository fertilizerRepository;
 

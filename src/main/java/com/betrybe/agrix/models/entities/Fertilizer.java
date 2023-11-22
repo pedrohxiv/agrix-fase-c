@@ -14,6 +14,7 @@ import java.util.List;
 @Entity
 @Table(name = "fertilizers")
 public class Fertilizer {
+
   /** Attributes. */
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)

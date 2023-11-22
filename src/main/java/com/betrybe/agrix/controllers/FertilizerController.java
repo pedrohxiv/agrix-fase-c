@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value = "/fertilizers")
 public class FertilizerController {
+
   /** Attributes. */
   private final FertilizerService fertilizerService;
 

@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 /** Farm service class. */
 @Service
 public class FarmService {
+
   /** Attributes. */
   private final FarmRepository farmRepository;
   private final CropRepository cropRepository;
