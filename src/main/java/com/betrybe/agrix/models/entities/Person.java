@@ -1,6 +1,7 @@
 package com.betrybe.agrix.models.entities;
 
 import com.betrybe.agrix.models.security.Role;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,7 +17,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 /** Person entity class. */
 @Entity
 @Table(name = "persons")
-public class Person implements UserDetails {
+public class Person implements UserDetails, GrantedAuthority {
 
   /** Attributes. */
   @Id
@@ -76,8 +77,9 @@ public class Person implements UserDetails {
   }
 
   @Override
-  public Collection<? extends GrantedAuthority> getAuthorities() {
-    return List.of();
+  @JsonIgnore
+  public Collection<Person> getAuthorities() {
+    return List.of(this);
   }
 
   @Override
@@ -98,6 +100,12 @@ public class Person implements UserDetails {
   @Override
   public boolean isEnabled() {
     return true;
+  }
+
+  @JsonIgnore
+  @Override
+  public String getAuthority() {
+    return role.getName();
   }
 
   /** Checks equality method. */

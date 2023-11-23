@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -43,6 +44,7 @@ public class FarmController {
 
   /** GET farms method. */
   @GetMapping()
+  @Secured({ "USER", "MANAGER", "ADMIN" })
   public List<FarmDto> getAllFarms() {
     List<Farm> allFarms = farmService.getAllFarms();
 
